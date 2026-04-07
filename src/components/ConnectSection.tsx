@@ -7,7 +7,7 @@ const ConnectSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:your.email@example.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.email}`;
+    const mailto = `mailto:iamchandra29@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.email}`;
     window.open(mailto);
   };
 
@@ -28,21 +28,7 @@ const ConnectSection = () => {
               <Mail size={18} className="text-primary" />
               <div>
                 <p className="text-xs text-muted-foreground">Email</p>
-                <p className="text-sm text-foreground">your.email@example.com</p>
-              </div>
-            </a>
-            <a href="#" className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow group">
-              <ExternalLink size={18} className="text-primary" />
-              <div>
-                <p className="text-xs text-muted-foreground">LinkedIn</p>
-                <p className="text-sm text-foreground">linkedin.com/in/yourprofile</p>
-              </div>
-            </a>
-            <a href="#" className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow group">
-              <Code2 size={18} className="text-primary" />
-              <div>
-                <p className="text-xs text-muted-foreground">GitHub</p>
-                <p className="text-sm text-foreground">github.com/yourprofile</p>
+                <p className="text-sm text-foreground">iamchandra29@gmail.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card">
