@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
 
 const education = [
   { school: "Indiana Wesleyan University", degree: "M.S in Computer Science", gpa: "GPA: 4.0 / 4.0" },
@@ -14,50 +13,42 @@ const certificates = [
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-24 px-6 relative">
-      <div className="absolute inset-0 grid-bg opacity-10" />
-      <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="font-display text-xs tracking-[0.3em] text-primary mb-3 uppercase">Credentials</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold gradient-text inline-block">Education & Certificates</h2>
+    <section id="education" className="py-20 px-6">
+      <div className="max-w-5xl mx-auto">
+        <motion.div className="mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">Education & Certificates</h2>
+          <div className="w-12 h-1 bg-primary rounded mt-3" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
           {education.map((edu, i) => (
             <motion.div
               key={edu.school}
-              className="glass rounded-xl p-6 hover:glow-box transition-all duration-500"
+              className="p-5 rounded-xl border border-border bg-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              transition={{ delay: i * 0.1 }}
             >
-              <GraduationCap className="text-primary mb-3" size={28} />
-              <h3 className="font-display text-base font-semibold text-foreground mb-1">{edu.degree}</h3>
-              <p className="text-muted-foreground text-sm mb-2">{edu.school}</p>
-              <span className="text-xs font-display tracking-wider text-primary">{edu.gpa}</span>
+              <h3 className="font-display text-sm font-semibold text-foreground mb-1">{edu.degree}</h3>
+              <p className="text-sm text-muted-foreground mb-2">{edu.school}</p>
+              <span className="text-xs font-medium text-primary">{edu.gpa}</span>
             </motion.div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4">
           {certificates.map((cert, i) => (
             <motion.div
               key={cert.name}
-              className="glass rounded-xl p-5 hover:glow-box transition-all duration-500 text-center"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="p-4 rounded-xl border border-border bg-card text-center"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Award className="text-accent mx-auto mb-3" size={28} />
-              <h3 className="font-display text-xs tracking-wider text-foreground mb-1">{cert.name}</h3>
-              <p className="text-muted-foreground text-xs">{cert.issuer}</p>
+              <h3 className="text-sm font-medium text-foreground mb-1">{cert.name}</h3>
+              <p className="text-xs text-muted-foreground">{cert.issuer}</p>
             </motion.div>
           ))}
         </div>
